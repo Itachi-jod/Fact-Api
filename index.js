@@ -1,17 +1,120 @@
-const express = require("express");
-const cors = require("cors");
-const facts = require("./facts.json");
-
+const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+const funFacts = [
+  "Honey never spoils.",
+  "Bananas are berries, but strawberries aren't.",
+  "Octopuses have three hearts.",
+  "Humans share 60% of their DNA with bananas.",
+  "Sharks have been around longer than trees.",
+  "A group of flamingos is called a flamboyance.",
+  "Wombat poop is cube-shaped.",
+  "Sloths can hold their breath longer than dolphins.",
+  "There are more stars in the universe than grains of sand on Earth.",
+  "Turritopsis dohrnii jellyfish are potentially immortal.",
+  "Cows have best friends and get stressed when separated.",
+  "The Eiffel Tower can be 15 cm taller during summer.",
+  "Butterflies taste with their feet.",
+  "A day on Venus is longer than a year on Venus.",
+  "Cats can make over 100 different sounds.",
+  "Hot water freezes faster than cold water under certain conditions.",
+  "Sea otters hold hands when they sleep to keep from drifting apart.",
+  "Koalas have fingerprints almost identical to humans.",
+  "The world's oldest piece of chewing gum is 9,000 years old.",
+  "A bolt of lightning contains enough energy to toast 100,000 slices of bread.",
+  "Dolphins have names for each other.",
+  "The longest wedding veil was longer than 63 football fields.",
+  "There are more fake flamingos in the world than real ones.",
+  "Blue whales' hearts can weigh as much as a car.",
+  "Sharks can live up to 500 years.",
+  "Jellyfish evaporate in the sun because they're 95% water.",
+  "The shortest war in history lasted 38 minutes.",
+  "Pineapples take about two years to grow.",
+  "A crocodile can't stick its tongue out.",
+  "The inventor of the Pringles can is buried in one.",
+  "An octopus can squeeze through any hole bigger than its beak.",
+  "There’s a species of spider called the Hobo Spider.",
+  "Tigers have striped skin, not just striped fur.",
+  "The moon has moonquakes.",
+  "Humans are the only animals that blush.",
+  "Butterflies can see ultraviolet light.",
+  "Goats have rectangular pupils.",
+  "The Great Wall of China is not visible from space to the naked eye.",
+  "The average person walks the equivalent of five times around the world in their lifetime.",
+  "Peanuts are not nuts; they grow underground.",
+  "Sharks are immune to all known diseases.",
+  "Elephants are the only mammals that can't jump.",
+  "The human nose can remember 50,000 different scents.",
+  "Cats sleep for 70% of their lives.",
+  "The dot over the letter 'i' is called a tittle.",
+  "Slugs have four noses.",
+  "The heart of a shrimp is located in its head.",
+  "Butterflies can taste with their feet.",
+  "Polar bear skin is actually black beneath their white fur.",
+  "Humans and giraffes have the same number of neck vertebrae.",
+  "Your stomach lining is replaced every 3-4 days.",
+  "A cockroach can live several weeks without its head.",
+  "Some turtles can breathe through their butts.",
+  "Dolphins sleep with one eye open.",
+  "The world's smallest reptile was discovered in 2021 and fits on a fingertip.",
+  "The Sahara Desert used to be a lush green landscape.",
+  "Sharks can detect one drop of blood in 25 gallons of water.",
+  "The unicorn is the national animal of Scotland.",
+  "A cloud can weigh over a million pounds.",
+  "Starfish don’t have brains.",
+  "Wombat poop helps mark territory with scent.",
+  "The first oranges weren’t orange; they were green.",
+  "Octopuses taste with their arms.",
+  "The average person produces enough saliva in their lifetime to fill two swimming pools.",
+  "Some metals are so reactive that they explode on contact with water.",
+  "Honeybees can recognize human faces.",
+  "A group of crows is called a murder.",
+  "Bats always turn left when exiting a cave.",
+  "A newborn kangaroo is the size of a lima bean.",
+  "There are more bacteria in your mouth than people on Earth.",
+  "The dot over the letter 'i' is called a tittle.",
+  "Humans have about 60,000 thoughts per day.",
+  "Sharks don’t have bones.",
+  "A group of pandas is called an embarrassment.",
+  "Frogs can freeze without dying.",
+  "The longest hiccuping spree lasted 68 years.",
+  "The hashtag symbol is technically called an octothorpe.",
+  "Peacock feathers contain microscopic structures that create color.",
+  "Some fish can walk on land.",
+  "The Eiffel Tower was originally intended for Barcelona.",
+  "Owls can rotate their necks 270 degrees.",
+  "Bamboo can grow up to 3 feet in 24 hours.",
+  "Butterflies live only about a week.",
+  "Cats have over 20 muscles in their ears.",
+  "Sharks have electroreceptors to detect prey.",
+  "Venus is the hottest planet in our solar system.",
+  "Elephants can hear with their feet.",
+  "The world’s oldest piece of chewing gum is over 9,000 years old.",
+  "A cockroach can live nine days without its head.",
+  "Rabbits can see nearly 360 degrees around them.",
+  "Horses and cows sleep standing up.",
+  "Camels have three eyelids.",
+  "Sloths can hold their breath for up to 40 minutes.",
+  "Some jellyfish are immortal.",
+  "Butterflies taste with their feet.",
+  "The heart of a blue whale is the size of a small car.",
+  "Lightning strikes about 8 million times a day worldwide.",
+  "There are more trees on Earth than stars in the Milky Way.",
+  "The longest recorded flight of a chicken is 13 seconds.",
+  "The tongue is the only muscle in the body attached from one end.",
+  "Humans share 98.8% DNA with chimpanzees."
+];
 
-app.get("/funfact", (req, res) => {
-  const fact = facts[Math.floor(Math.random() * facts.length)];
+app.get('/fact', (req, res) => {
+  const fact = funFacts[Math.floor(Math.random() * funFacts.length)];
   res.json({ fact });
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to Fun Facts API! Use /fact to get a random fun fact.');
+});
+
 app.listen(PORT, () => {
-  console.log(`Fun Fact API running on port ${PORT}`);
+  console.log(`Fun Facts API running on port ${PORT}`);
 });
