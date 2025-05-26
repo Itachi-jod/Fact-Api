@@ -1,7 +1,7 @@
 {
-  "name": "funfact-api",
+  "name": "fun-fact-api",
   "version": "1.0.0",
-  "description": "Simple Fun Fact API",
+  "description": "API that returns random fun facts",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,6 +9,7 @@
   "author": "Lord Itachi",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2"
   }
 }
