@@ -1,0 +1,14 @@
+{
+  "name": "funfact-api",
+  "version": "1.0.0",
+  "description": "A simple API to serve random fun facts",
+  "main": "funfact-api.js",
+  "scripts": {
+    "start": "node funfact-api.js"
+  },
+  "author": "Lord Itachi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
