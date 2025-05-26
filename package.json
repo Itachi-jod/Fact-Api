@@ -1,13 +1,13 @@
 {
-  "name": "fun-facts-api",
+  "name": "facts-service",
   "version": "1.0.0",
-  "description": "Simple Fun Facts API",
+  "description": "A simple web service that returns a random fact",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "author": "Lord Itachi",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
   }
